@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard Admin - Web Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .clicked {
+            background-color: #3b82f6; /* Warna biru lebih gelap */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body>
-    <p>euy</p>
+<body class="bg-blue-500 min-h-screen p-8">
+    <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-white">Beranda</h1>
+        <p class="text-lg text-white">Kelola konten website </p>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pengelolaan Profil -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105 hover:shadow-lg" onclick="handleClick(this)">
+            <h2 class="text-2xl font-bold mb-4">Kelola Profil</h2>
+            <p class="text-gray-700">Edit dan update informasi profil</p>
+            <a href="PengaturanProfil.html" class="inline-block bg-blue-600 text-white py-2 px-4 rounded-md mt-4 transition-transform transform hover:scale-105">Edit Profil</a>
+        </div>
+        <!-- Pengelolaan Portofolio -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105 hover:shadow-lg" onclick="handleClick(this)">
+            <h2 class="text-2xl font-bold mb-4">Kelola Portofolio</h2>
+            <p class="text-gray-700">Tambah atau edit karya di portofolio</p>
+            <a href="portofolio.html" class="inline-block bg-blue-600 text-white py-2 px-4 rounded-md mt-4 transition-transform transform hover:scale-105">Edit Portofolio</a>
+        </div>
+        <!-- Pengelolaan Kontak -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:scale-105 hover:shadow-lg" onclick="handleClick(this)">
+            <h2 class="text-2xl font-bold mb-4">Kelola Kontak</h2>
+            <p class="text-gray-700">Update informasi kontak </p>
+            <a href="kontak.html" class="inline-block bg-blue-600 text-white py-2 px-4 rounded-md mt-4 transition-transform transform hover:scale-105">Edit Kontak</a>
+        </div>
+    </main>
+
+    <script>
+        function handleClick(element) {
+            element.classList.toggle('clicked');
+            setTimeout(() => {
+                element.classList.remove('clicked');
+            }, 300); // Menghapus kelas setelah 300ms
+        }
+    </script>
 </body>
 </html>
